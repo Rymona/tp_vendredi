@@ -51,11 +51,11 @@ jobs:
           username: ${{ vars.GIT_USERNAME }}
           password: ${{ secrets.GIT_PASSWORD }}
 
-      - name: Build Docker image
+      - name: Build & Push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
           tags: |
-            ${{ secrets.GIT_USERNAME }}/bug-tracker:latest
+            ${{ vars.GIT_USERNAME }}/bug-tracker:latest
             ${{ secrets.GIT_USERNAME }}/bug-tracker:v1.0.0-${{ github.run_number }}
