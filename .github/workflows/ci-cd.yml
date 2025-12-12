@@ -24,6 +24,10 @@ jobs:
 
       - name: run tests
         uses: cypress-io/github-action@v6
+        with:
+          start: npm start
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 120
 
       - name: upload test results
         if: failure()
