@@ -60,6 +60,7 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:v1.0.0-${{ github.run_number }}
+            ghcr.io/rymona/tp_vendredi:latest
+            ghcr.io/rymona/tp_vendredi:v1.0.0-${{ github.run_number }}
+
 
