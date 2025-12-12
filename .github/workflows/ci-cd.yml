@@ -47,9 +47,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Login Docker Hub
+      - name: Login GitHub Container Registry
         uses: docker/login-action@v3
         with:
+          registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
@@ -61,3 +62,4 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}:latest
             ghcr.io/${{ github.repository }}:v1.0.0-${{ github.run_number }}
+
