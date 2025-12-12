@@ -48,7 +48,7 @@ jobs:
       - name: Login Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ vars.GIT_USERNAME }}
+          username: marion44240
           password: ${{ secrets.GIT_PASSWORD }}
 
       - name: Build & Push Docker image
@@ -57,5 +57,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ vars.GIT_USERNAME }}/bug-tracker:latest
-            ${{ secrets.GIT_USERNAME }}/bug-tracker:v1.0.0-${{ github.run_number }}
+            marion44240/bug-tracker:latest
+            marion44240/bug-tracker:v1.0.0-${{ github.run_number }}
